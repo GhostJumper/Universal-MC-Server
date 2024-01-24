@@ -14,12 +14,18 @@ if [ -z "$XMX" ]; then
   exit 1
 fi
 
-# Check if server.jar file already exists
-if [ ! -f "server.jar" ]; then
+# Check if REDOWNLOAD environment variable is set to true
+if [ "$REDOWNLOAD" = "true" ]; then
     # Download the file with curl and save it as server.jar
     curl -o server.jar $FILE_URL
 else
-    echo "server.jar already exists. Skipping download."
+    # Check if server.jar file already exists
+    if [ ! -f "server.jar" ]; then
+        # Download the file with curl and save it as server.jar
+        curl -o server.jar $FILE_URL
+    else
+        echo "server.jar already exists. Skipping download."
+    fi
 fi
 
 # Start the Java application

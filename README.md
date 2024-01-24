@@ -25,6 +25,7 @@ docker run  -d \
             -v <PATH>:/mc \
             -e FILE_URL="<JAR_URL>" \
             -e XMX="4G" \
+            -e REDOWNLOAD="<true or false>" \
             unrea1/universal-mc-server:1
 ```
 
@@ -36,6 +37,7 @@ docker run  -d \
             -v /home/minecraft:/mc \
             -e FILE_URL="https://api.papermc.io/v2/projects/paper/versions/1.20.1/builds/43/downloads/paper-1.20.1-43.jar" \
             -e XMX="4G" \
+            -e REDOWNLOAD="false" \
             unrea1/universal-mc-server:1
 ```
 
