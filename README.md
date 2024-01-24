@@ -13,6 +13,7 @@ To build the project, you need to clone the repository to your local machine.
 ```bash
 git clone https://github.com/yourusername/Universal-MC-Server.git
 cd Universal-MC-Server
+docker build -t unrea1/universal-mc-server:1 .
 ```
 
 ### 🏁 Run
